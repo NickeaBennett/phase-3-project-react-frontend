@@ -19,7 +19,7 @@ useEffect(()=>{
   getTasks()
 },[])
 
-// Fetch tasks
+
 const fetchTasks =  async () =>{
     const res = await fetch('http://localhost:5000/tasks')
     const data =  await res.json()
@@ -39,7 +39,6 @@ const fetchTask =  async (id) =>{
 }
 
 
-//Add task
 const addTask = async (task) =>{
   const res = await fetch (`http://localhost:5000/tasks`,{
     method: 'POST',
@@ -56,7 +55,6 @@ const addTask = async (task) =>{
 }
 
 
-//Delete task
 const deleteTask =async(id)=>{
   const res = await fetch (`http://localhost:5000/tasks/${id}`,{
     method: 'DELETE',
@@ -83,7 +81,7 @@ const deleteTask =async(id)=>{
                     onDelete={deleteTask}
                   />
                 ) : (
-                  'No Tasks!'
+                  'No tasks available!'
                 )}
               </>
             }

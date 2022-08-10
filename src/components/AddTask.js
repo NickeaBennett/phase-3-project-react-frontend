@@ -2,7 +2,6 @@ import {useState} from 'react'
 
 const AddTask = ({onAdd}) => {
         const [text, setText] = useState('')
-        const [day, setDay] = useState('')
     
     const onSubmit = (e) =>{
         e.preventDefault()
@@ -12,10 +11,9 @@ const AddTask = ({onAdd}) => {
             return
         }
 
-        onAdd({text,day})
+        onAdd({text})
 
         setText('')
-        setDay('')
     }
 
     return (
@@ -26,14 +24,6 @@ const AddTask = ({onAdd}) => {
                     type='text'  
                     placeholder='Add a task'
                     value={text} onChange={(e) => setText(e.target.value)}
-                />
-            </div>
-            <div className='form-control'>
-                <label>Date</label>
-                <input 
-                    type='text' 
-                    placeholder='Enter date'
-                    value={day} onChange={(e) => setDay(e.target.value)}
                 />
             </div>
 
