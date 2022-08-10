@@ -1,9 +1,34 @@
 {
   "tasks": [
     {
-      "text": "ttetet",
-      "day": "etetet",
+      "text": "teettetet",
+      "day": "ettetetet",
       "id": 1
+    },
+    {
+      "text": "rrtrt",
+      "day": "rtrtrt",
+      "id": 2
+    },
+    {
+      "text": "Exercise ",
+      "day": "Today",
+      "id": 3
+    },
+    {
+      "text": "Eat",
+      "day": "Today",
+      "id": 4
+    },
+    {
+      "text": "Make Friends",
+      "day": "Today",
+      "id": 5
+    },
+    {
+      "text": "asafdf",
+      "day": "asfafafasff",
+      "id": 6
     }
   ]
 }

@@ -24,15 +24,15 @@ const AddTask = ({onAdd}) => {
                 <label>Task</label>
                 <input 
                     type='text'  
-                    placeholder='Add Task'
+                    placeholder='Add a task'
                     value={text} onChange={(e) => setText(e.target.value)}
                 />
             </div>
             <div className='form-control'>
-                <label>Day & Time</label>
+                <label>Date</label>
                 <input 
                     type='text' 
-                    placeholder='Date'
+                    placeholder='Enter date'
                     value={day} onChange={(e) => setDay(e.target.value)}
                 />
             </div>
