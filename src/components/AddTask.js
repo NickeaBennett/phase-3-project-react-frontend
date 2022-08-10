@@ -8,7 +8,7 @@ const AddTask = ({onAdd}) => {
         e.preventDefault()
 
         if(!text){
-            alert('Please add a task')
+            alert('Add a task')
             return
         }
 
@@ -32,7 +32,7 @@ const AddTask = ({onAdd}) => {
                 <label>Day & Time</label>
                 <input 
                     type='text' 
-                    placeholder='Add Day & Time'
+                    placeholder='Date'
                     value={day} onChange={(e) => setDay(e.target.value)}
                 />
             </div>
