@@ -1,29 +1,40 @@
 {
-  "tasks": [
+  "todos": [
     {
-      "text": "rrtrt",
-      "day": "rtrtrt",
-      "id": 2
+      "text": "fgfgfg",
+      "id": 7
     },
     {
-      "text": "Exercise ",
-      "day": "Today",
-      "id": 3
+      "text": "fgdg",
+      "id": 8
     },
     {
-      "text": "Eat",
-      "day": "Today",
-      "id": 4
+      "text": "233",
+      "id": 9
     },
     {
-      "text": "Make Friends",
-      "day": "Today",
-      "id": 5
+      "text": "ljkhjkhjkj",
+      "id": 10
     },
     {
-      "text": "asafdf",
-      "day": "asfafafasff",
-      "id": 6
+      "text": "fdfdff",
+      "id": 11
+    },
+    {
+      "text": "Nickea",
+      "id": 12
+    },
+    {
+      "text": "meeeeeeee",
+      "id": 13
+    },
+    {
+      "text": "erereer",
+      "id": 14
+    },
+    {
+      "text": "erreerer",
+      "id": 15
     }
   ]
 }

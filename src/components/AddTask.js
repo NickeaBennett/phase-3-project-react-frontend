@@ -7,7 +7,7 @@ const AddTask = ({onAdd}) => {
         e.preventDefault()
 
         if(!text){
-            alert('Add a task')
+            alert('Add a task before saving!')
             return
         }
 
