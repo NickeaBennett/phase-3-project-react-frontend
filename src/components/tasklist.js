@@ -26,7 +26,6 @@ export default function TaskList({ tasks, users, url, handleFilter, handleEditTa
             <InputLabel variant="standard" htmlFor="uncontrolled-native">
               User
             </InputLabel>
-            
             <NativeSelect
               defaultValue={"All"}
               onChange={(e) => handleFilter(e)}

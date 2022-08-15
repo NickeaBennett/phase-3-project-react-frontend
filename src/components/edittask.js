@@ -11,9 +11,7 @@ import Container from '@mui/material/Container';
 export default function EditTaskForm({ tasks, users, url, handleEditTask, handleDeleteTask }) {
   
   const navigate = useNavigate();
-
   const { id } = useParams()
-
   const task = tasks.find(t => t.id == id)
 
   const [taskName, setTaskName] = useState(task.name);
