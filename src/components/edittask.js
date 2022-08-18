@@ -85,7 +85,7 @@ export default function EditTaskForm({ tasks, users, url, handleEditTask, handle
           multiline
           maxRows={4}
           name="task-description"
-          value={taskDescription? taskDescription : "Enter Description (optional)"}
+          value={taskDescription? taskDescription : "Enter Description"}
           onChange={(e) => setTaskDescription(e.target.value)}
         />
         <FormControl>

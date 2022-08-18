@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AddTask from "./addtask";
-import TaskList from './tasklist';
-import EditTask from "./edittask";
+import AddTask from "./src/components/addtask";
+import TaskList from './src/components/tasklist';
+import EditTask from "./src/components/edittask";
 
 function App() {
 

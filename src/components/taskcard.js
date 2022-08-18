@@ -18,7 +18,7 @@ function TaskCard({
 
 }) {
 
-  let taskUser = users.find(u => u.id == user_id);
+  let UserTask = users.find(user => user.id == user_id);
   
   return (
     <Container>
@@ -37,7 +37,7 @@ function TaskCard({
         >
         <h1>{name}</h1>
         <h3>{description}</h3>
-        <h4>Created by: {taskUser.name}</h4>
+        <h4>Created by: {UserTask.name}</h4>
         <Box sx={{
           display: 'flex',
           justifyContent: 'space-between',

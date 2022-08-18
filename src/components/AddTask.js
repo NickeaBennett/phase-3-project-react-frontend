@@ -8,21 +8,23 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 
- function NewTask({ users, url, handleAddTask }) {
+function AddTask({ users, url, handleAddTask }) {
   const navigate = useNavigate();
 
   const [taskName, setTaskName] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskUser, setTaskUser] = useState("");
- 
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    let submittedTask = { task: {
-      name: taskName,
-      description: taskDescription,
-      user_id: taskUser,
-    }};
+    let submittedTask = {
+      task: {
+        name: taskName,
+        description: taskDescription,
+        user_id: taskUser,
+      }
+    };
 
     fetch(`${url}/tasks`, {
       method: "POST",
@@ -40,23 +42,23 @@ import NativeSelect from '@mui/material/NativeSelect';
           handleAddTask(newTask)
           navigate('/')
         }
-        });
+      });
   }
-  
+
   return (
     <Container component="main" maxWidth="xs">
       <Box
         backgroundColor='primary'
         component='form'
         sx={{
-          marginTop: 8,
+          marginTop: 12,
           display: 'flex',
           flexDirection: 'column',
-          aligntems: 'center',
+          alignItems: 'center',
           maxWidth: "xs",
         }}
         noValidate
-        autoComplete = 'off'
+        autoComplete='off'
         onSubmit={handleFormSubmit}
       >
         <h1>Add Task</h1>
@@ -86,8 +88,8 @@ import NativeSelect from '@mui/material/NativeSelect';
             defaultValue={1}
           >
             <option value={"User"}>(Select User)</option>
-            {users.map((user) => 
-            <option key={user.id} value={user.id}>{user.name}</option>)}
+            {users.map((user) =>
+              <option key={user.id} value={user.id}>{user.name}</option>)}
           </NativeSelect>
         </FormControl>
         <Button type="submit" variant="contained">Submit</Button>
@@ -96,4 +98,4 @@ import NativeSelect from '@mui/material/NativeSelect';
   )
 }
 
-export default NewTask
+export default AddTask
