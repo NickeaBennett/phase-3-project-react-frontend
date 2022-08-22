@@ -8,8 +8,8 @@ import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 import Container from '@mui/material/Container';
 
-export default function EditTaskForm({ tasks, users, url, handleEditTask, handleDeleteTask }) {
-  
+export default function EditTask({ tasks, users, url, handleEditTask, handleDeleteTask }) {
+
   const navigate = useNavigate();
   const { id } = useParams()
   const task = tasks.find(t => t.id == id)
@@ -17,16 +17,18 @@ export default function EditTaskForm({ tasks, users, url, handleEditTask, handle
   const [taskName, setTaskName] = useState(task.name);
   const [taskDescription, setTaskDescription] = useState(task.description);
   const [taskUser, setTaskUser] = useState(task.user_id);
-  
-  
+
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    let submittedTask = { task: {
-      name: taskName,
-      description: taskDescription,
-      user_id: taskUser
-    }};
+    let submittedTask = {
+      task: {
+        name: taskName,
+        description: taskDescription,
+        user_id: taskUser
+      }
+    };
 
     fetch(`${url}/tasks/${id}`, {
       method: "PATCH",
@@ -63,11 +65,11 @@ export default function EditTaskForm({ tasks, users, url, handleEditTask, handle
           marginTop: 8,
           display: 'flex',
           flexDirection: 'column',
-          aligntems: 'center',
+          alignItems: 'center',
           maxWidth: "xs",
         }}
         noValidate
-        autoComplete = 'off'
+        autoComplete='off'
         onSubmit={handleFormSubmit}
       >
         <h1>Edit Task</h1>
@@ -85,7 +87,7 @@ export default function EditTaskForm({ tasks, users, url, handleEditTask, handle
           multiline
           maxRows={4}
           name="task-description"
-          value={taskDescription? taskDescription : "Enter Description"}
+          value={taskDescription ? taskDescription : "Enter Description"}
           onChange={(e) => setTaskDescription(e.target.value)}
         />
         <FormControl>
@@ -96,12 +98,12 @@ export default function EditTaskForm({ tasks, users, url, handleEditTask, handle
             onChange={(e) => setTaskUser(e.target.value)}
             value={taskUser}
           >
-            {users.map((user) => 
-            <option key={user.id} value={user.id}>{user.name}</option>)}
+            {users.map((user) =>
+              <option key={user.id} value={user.id}>{user.name}</option>)}
           </NativeSelect>
         </FormControl>
-        <Button type="submit" variant="contained">Add Task</Button>
-        <Button variant="contained" color="error" sx={{margin: 5}} onClick={handleDeleteClick}>Remove Task</Button>
+        <Button type="submit" variant="contained">Update Task</Button>
+        <Button variant="contained" color="error" sx={{ margin: 5 }} onClick={handleDeleteClick}>Remove Task</Button>
       </Box>
     </Container>
   )

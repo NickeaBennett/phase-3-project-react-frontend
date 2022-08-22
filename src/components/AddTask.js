@@ -92,7 +92,7 @@ function AddTask({ users, url, handleAddTask }) {
               <option key={user.id} value={user.id}>{user.name}</option>)}
           </NativeSelect>
         </FormControl>
-        <Button type="submit" variant="contained">Submit</Button>
+        <Button type="submit" variant="contained">Add Task</Button>
       </Box>
     </Container>
   )

@@ -19,7 +19,7 @@ function TaskCard({
 }) {
 
   let UserTask = users.find(user => user.id == user_id);
-  
+
   return (
     <Container>
       <Box
@@ -34,7 +34,7 @@ function TaskCard({
             opacity: [0.9, 0.8, 0.7],
           },
         }}
-        >
+      >
         <h1>{name}</h1>
         <h3>{description}</h3>
         <h4>Created by: {UserTask.name}</h4>
@@ -42,7 +42,7 @@ function TaskCard({
           display: 'flex',
           justifyContent: 'space-between',
         }}>
-        <Link to={`/tasks/${id}/edit`}><Button variant={"contained"}><EditIcon /></Button></Link>
+          <Link to={`/tasks/${id}/edit`}><Button variant={"contained"}><EditIcon /></Button></Link>
         </Box>
       </Box>
     </Container>

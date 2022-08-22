@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AddTask from "./src/components/addtask";
-import TaskList from './src/components/tasklist';
-import EditTask from "./src/components/edittask";
+import AddTask from "./AddTask";
+import TaskList from './TaskList';
+import EditTask from "./EditTask";
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [user, setUser] = useState("");
-  
+
   useEffect(() => {
     fetch(`${url}/users`)
       .then((r) => r.json())
@@ -23,7 +23,7 @@ function App() {
       .then((data) => setTasks([...data]))
   }, []);
 
-  
+
   const handleTaskFilter = (e) => {
     e.preventDefault();
     setUser(e.target.value === "All" ? "" : e.target.value)
@@ -57,8 +57,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<TaskList tasks={displayedTasks} users={users} url={url} handleEditTask={handleEditTask} handleFilter={handleTaskFilter} />}  />
-          <Route exact path="/tasks/add" element={<AddTask users={users} url={url} handleAddTask={handleAddTask} /> } />
+          <Route exact path="/" element={<TaskList tasks={displayedTasks} users={users} url={url} handleEditTask={handleEditTask} handleFilter={handleTaskFilter} />} />
+          <Route exact path="/tasks/add" element={<AddTask users={users} url={url} handleAddTask={handleAddTask} />} />
           <Route path="/tasks/:id/edit" element={<EditTask tasks={tasks} users={users} url={url} handleEditTask={handleEditTask} handleDeleteTask={handleDeleteTask} />} />
         </Routes>
       </BrowserRouter>
